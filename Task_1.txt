@@ -1,0 +1,71 @@
+
+
+1. Check current logged-in user
+whoami
+
+
+
+2. Check currently logged-in users and their activity
+who
+
+# Detailed info
+w
+
+
+3. View login history
+last
+
+
+4. Display system information, hostname, and uptime
+
+# System information
+uname -a
+
+# Hostname
+hostname
+
+# Uptime
+uptime
+
+
+5. Create groups: developers and qa
+
+sudo groupadd developers
+sudo groupadd qa
+
+# Verify groups created
+getent group developers
+getent group qa
+
+Display all groups
+cat /etc/group
+
+
+6. Create users and assign to groups
+
+# Create aman in developers
+sudo useradd -m -g developers aman
+
+# Create ritu in developers
+sudo useradd -m -g developers ritu
+
+# Create karan in qa
+sudo useradd -m -g qa karan
+
+
+Verify user group assignment
+id aman
+id ritu
+id karan
+
+
+7. Remove user ritu after resignation
+
+
+# Delete user along with home directory
+sudo userdel -r ritu
+
+# Verify deletion
+id ritu
+
+

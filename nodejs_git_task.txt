@@ -1,0 +1,92 @@
+# =========================================
+# NODE.JS APPLICATION SETUP & GIT INTEGRATION
+# =========================================
+
+# 1. Create project folder and navigate into it
+mkdir nodejs-api
+cd nodejs-api
+
+# 2. Initialize Node.js project
+npm init -y
+
+# 3. Install dependencies
+npm install express
+npm install --save-dev @types/express
+
+# 4. Create index.js file
+touch index.js
+
+# 5. Add Express server code
+# Open index.js and paste the following:
+
+const express = require('express');
+const app = express();
+const PORT = 8080;
+
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: "OK" });
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
+
+
+# 6. Run the server
+node index.js
+
+# Test endpoint:
+# Open browser or use curl:
+# curl http://localhost:8080/health
+
+# Expected Output:
+# { "status": "OK" }
+
+
+# ================================
+# GIT SETUP
+# ================================
+
+# 7. Initialize Git repository
+git init
+
+# 8. Add all files
+git add .
+
+# 9. Commit files
+git commit -m "Initial commit - Node.js API setup"
+
+
+# ================================
+# GITHUB INTEGRATION
+# ================================
+
+# 10. Create a repository on GitHub named: nodejs-api
+
+# 11. Add remote origin (replace with your repo URL)
+git remote add origin https://github.com/your-username/nodejs-api.git
+
+# 12. Push code to GitHub
+git branch -M main
+git push -u origin main
+
+
+# ================================
+# EXPECTED OUTPUT
+# ================================
+
+# Files in project:
+# package.json
+# node_modules/
+# index.js
+
+# API Response:
+# { "status": "OK" }
+
+# GitHub repo:
+# nodejs-api (public) with at least one commit
+
+
+# =========================================
+# END OF TASK
+# =========================================
